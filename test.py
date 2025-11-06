@@ -33,3 +33,9 @@ while shopping:
         else: 
             print ("cashier is up front")
             break 
+
+
+
+
+
+
