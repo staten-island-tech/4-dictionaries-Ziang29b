@@ -17,12 +17,15 @@ stuff=[
                 ]
 
 shopping = True 
+bought=[]
 while shopping:
         user_input = input("what do you want, banana apple or giant baguette pillow: ").lower()
         if user_input in [item["name"] for item in stuff]:
              for item in stuff:
                 if item["name"] == user_input:
                     print(item)
+                    bought.append (item)
+                
 
 
         else: 
@@ -31,7 +34,12 @@ while shopping:
         if user_input in ["yea" , "yes", "yeah", "yep" , "yuh"]:
             print ("okay enjoy your shopping")
         else: 
-            print ("cashier is up front")
+            print ("cashier is up front",bought)
+            total = 0
+            for item in bought:
+                price_str = item["price"].split()[0]
+                total += float(price_str)   
+            print("total price: $", total)
             break 
 
 
